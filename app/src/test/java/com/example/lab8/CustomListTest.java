@@ -34,14 +34,14 @@ public class CustomListTest {
         list.addCity(city);
         assertTrue(CustomList.hasCity(city));
     }
-//    @Test
-//    public void testDelete(){
-//        CustomList list = new CustomList(null,citylist);
-//        City city = new City("Regina", "Saskatchewan");
-//        list.delete(city);
-//        assertEquals(0, CustomList.getCities().size());
-//        assertThrows( IllegalArgumentException.class, () -> {CustomList.delete(city); });
-//    }
+    @Test
+    public void testDelete(){
+        CustomList list = new CustomList(null,citylist);
+        City city = new City("Regina", "Saskatchewan");
+        list.delete(city);
+        assertEquals(0, CustomList.getCities().size());
+        assertThrows( IllegalArgumentException.class, () -> {CustomList.delete(city); });
+    }
 //    @Test
 //    public void testCount(){
 //

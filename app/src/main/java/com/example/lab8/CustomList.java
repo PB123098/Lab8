@@ -97,20 +97,20 @@ public class CustomList extends ArrayAdapter<City> {
         if (removeIdx != -1) {
 
 
-            cities.remove(removeIdx);
+            // cities.remove(removeIdx);
 
         } else {
             throw new IllegalArgumentException();
         }
 
     }
-    public static int countCities(){
-        /**
-         * Return how many cities are in the list
-         */
-        int i = cities.size();
-        return i;
-
-    }
+//    public static int countCities(){
+//        /**
+//         * Return how many cities are in the list
+//         */
+//        int i = cities.size();
+//        return i;
+//
+//    }
 
 }
