@@ -79,7 +79,7 @@ public class CustomList extends ArrayAdapter<City> {
          */
 
         if (cities.contains(city)){
-            // return true;
+            return true;
         }
         return false;
     }
