@@ -11,10 +11,13 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Objects;
 
 public class CustomList extends ArrayAdapter<City> {
 
-    private ArrayList<City> cities;
+    private static ArrayList<City> cities;
     private Context context;
 
     public CustomList(Context context, ArrayList<City> cities) {
@@ -52,6 +55,61 @@ public class CustomList extends ArrayAdapter<City> {
     public void addCity(City city){
         this.cities.add(city);
 
+
+    }
+    public void add(City city) {
+        if (cities.contains(city)) {
+            throw new IllegalArgumentException();
+        }
+        cities.add(city);
+    }
+    /**
+     * This returns a sorted list of cities
+     * @return
+     * Return the sorted list
+     */
+    public static List getCities() {
+        List list = cities;
+        Collections.sort(list);
+        return list;
+    }
+    public static boolean hasCity(City city){
+        /**
+         * When given a city, return whether or not it belongs in the list
+         */
+
+        if (cities.contains(city)){
+            // return true;
+        }
+        return false;
+    }
+    public static void delete(City city){
+        /**
+         * Check if a city is present in the list. If it does then remove it from the list, if not then throw an exception
+         */
+        int removeIdx = -1;
+        for(int i=0; i < cities.size();i++){
+            String cityExist = cities.get(i).getCityName();
+            if(Objects.equals(cityExist, city.getCityName())) {
+                removeIdx = i;
+            }
+        }
+        if (removeIdx != -1) {
+
+
+            cities.remove(removeIdx);
+
+        } else {
+            throw new IllegalArgumentException();
+        }
+
+    }
+    public static int countCities(){
+        /**
+         * Return how many cities are in the list
+         */
+        int i = cities.size();
+        return i;
 
     }
 
