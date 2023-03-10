@@ -97,7 +97,7 @@ public class CustomList extends ArrayAdapter<City> {
         if (removeIdx != -1) {
 
 
-            // cities.remove(removeIdx);
+            cities.remove(removeIdx);
 
         } else {
             throw new IllegalArgumentException();

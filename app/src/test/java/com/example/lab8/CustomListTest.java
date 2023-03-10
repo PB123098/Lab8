@@ -38,6 +38,8 @@ public class CustomListTest {
     public void testDelete(){
         CustomList list = new CustomList(null,citylist);
         City city = new City("Regina", "Saskatchewan");
+        list.addCity(city);
+        assertEquals(1, CustomList.getCities().size());
         list.delete(city);
         assertEquals(0, CustomList.getCities().size());
         assertThrows( IllegalArgumentException.class, () -> {CustomList.delete(city); });
