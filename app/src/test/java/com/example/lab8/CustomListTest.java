@@ -44,16 +44,17 @@ public class CustomListTest {
         assertEquals(0, CustomList.getCities().size());
         assertThrows( IllegalArgumentException.class, () -> {CustomList.delete(city); });
     }
-//    @Test
-//    public void testCount(){
-//
-//        CustomList list = new CustomList(null,citylist);
-//        assertEquals(1,CustomList.countCities());
-//        CustomList.add(new City("Vancouver", "British Columbia"));
-//        assertEquals(2,CustomList.countCities());
-//
-//
-//    }
+    @Test
+    public void testCount(){
+
+        CustomList list = new CustomList(null,citylist);
+        assertEquals(0,CustomList.countCities());
+        City city = (new City("Vancouver", "British Columbia"));
+        list.addCity(city);
+        assertEquals(1,CustomList.countCities());
+
+
+    }
 
 
 
